@@ -13,18 +13,18 @@
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
+      <img id="progress-gif" class="progress-gif" src="TemplateData/pijiupao.gif" ">
+      <div id=" unity-canvas">
+    </div>
 
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
-      </div>
-    </div>
-    <div id="unity-warning"> </div>
-    <div id="unity-footer">
-      <div id="unity-logo-title-footer"></div>
-      <div id="unity-fullscreen-button"></div>
-      <div id="unity-build-title">web-test1</div>
-    </div>
+  </div>
+  </div>
+  <div id="unity-warning"> </div>
+  <div id="unity-footer">
+    <div id="unity-logo-title-footer"></div>
+    <div id="unity-fullscreen-button"></div>
+    <div id="unity-build-title">web-test1</div>
+  </div>
   </div>
   <script>
     var canvas = document.querySelector("#unity-canvas");
@@ -105,12 +105,14 @@
       canvas.style.height = window.innerHeight + "px";
     }
 
-    //document.querySelector("#unity-loading-bar").style.display = "block";
+    document.querySelector("#unity-loading-bar").style.display = "block";
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
-        document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+        var gif = document.querySelector("#progress-gif"); //添加的代码，不解释
+        gif.style.bottom = -(1 - progress) * 100 + "px"; //向上移动 
+        //document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         document.querySelector("#unity-loading-bar").style.display = "none";
         document.querySelector("#unity-fullscreen-button").onclick = () => {
