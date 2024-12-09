@@ -43,7 +43,7 @@ body {
     position: absolute;
     width: 100%;
     opacity: 1;
-    bottom: -50%;
+    bottom: -120%;
     /*感觉是你说的比例问题，这个跟向上挪动的范围一样调调就好*/
     transition: bottom 1.5s linear;
 }
