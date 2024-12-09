@@ -14,7 +14,7 @@
   <div id="unity-container">
     <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
-
+      <img id="progress-gif" class="progress-gif" src="TemplateData/pijiupao.gif">
       <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
@@ -86,6 +86,7 @@
       meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
       document.getElementsByTagName('head')[0].appendChild(meta);
     }
+
 
     loadingBar.style.display = "block";
 
